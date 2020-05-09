@@ -5,19 +5,20 @@ phases:
       commands:
         - echo Entered the install phase...
         - apt-get update -y
-        - apt-get install -y docker
+        - apt-get install -y npm
       finally:
         - echo This always runs even if the update or install command fails 
     pre_build:
       commands:
-        - echo Entered the pre_build phase...
+        - echo Entered the pre_build stage...
+        - npm install cypress
       finally:
         - echo This always runs even if the login command fails 
     build:
       commands:
         - echo Entered the build phase...
         - echo Build started on `date`
-        - docker build -t ai-joe/realworld .
+        - npm install
       finally:
         - echo This always runs even if the install command fails
     post_build:
