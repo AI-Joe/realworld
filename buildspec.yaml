@@ -1,12 +1,10 @@
 version: 0.2
 
 phases:
-  unit_test:
-    commands:
-      - echo unit testing
-      - npm test
   pre_build:
     commands:
+      - echo unit testing...
+      - npm test
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
