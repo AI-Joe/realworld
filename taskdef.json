@@ -2,6 +2,7 @@
     "executionRoleArn": "arn:aws:iam::620492784850:role/ecsTaskExecutionRole",
     "containerDefinitions": [
       {
+        "essential": true,
         "portMappings": [
           {
             "hostPort": 80,
