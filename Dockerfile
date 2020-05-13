@@ -15,5 +15,5 @@ WORKDIR /app
 COPY --from=0 /app .
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
 CMD ["node", "__sapper__/build"]
